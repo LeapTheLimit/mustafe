@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-black text-white;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shine {
+  0% { background-position: -100%; }
+  100% { background-position: 100%; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero-text-gradient {
+  background: linear-gradient(to right, #ffffff, #4a90e2, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+}
+
+.hero-image-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(0,0,0,0.7) 0%,
+    rgba(0,0,0,0.4) 50%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.parallax-bg {
+  transform: translateZ(-1px) scale(2);
+}
+
+.custom-shadow {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-button {
+  @apply fixed bottom-5 right-5 bg-green-500 text-white rounded-full w-14 h-14 
+         flex items-center justify-center text-3xl shadow-lg z-50 
+         transition-transform hover:scale-110;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .mobile-nav {
+    @apply fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm;
+  }
+
+  .mobile-menu {
+    @apply fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center;
+  }
+
+  .mobile-menu-item {
+    @apply text-2xl my-4 px-8 py-3 rounded-full transition-all duration-200 
+           text-white text-center w-4/5 hover:bg-white/10;
+  }
+}
