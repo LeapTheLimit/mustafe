@@ -58,36 +58,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-blur-sm">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">
-            MUSTAFA
-          </Link>
-          <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => handleNavigation("destinations")}
-              className="text-white hover:text-gray-300"
-            >
-              {language === "ar" ? "الوجهات" : "Destinations"}
-            </button>
-            <button
-              onClick={() => handleNavigation("services")}
-              className="text-white hover:text-gray-300"
-            >
-              {language === "ar" ? "خدماتنا" : "Services"}
-            </button>
-            <Link href="/booking" className="text-white hover:text-gray-300">
-              {language === "ar" ? "حجز" : "Book"}
-            </Link>
-            <button
-              onClick={() => setLanguage(language === "en" ? "ar" : "en")}
-              className="text-white hover:text-gray-300"
-            >
-              {language === "ar" ? "EN" : "عربي"}
-            </button>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Hero Section */}
       <div className="relative h-screen overflow-hidden">

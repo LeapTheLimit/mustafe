@@ -35,10 +35,23 @@ export default function BookingForm({ tripName, isOpen, onClose }: BookingFormPr
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
-      phone: formData.phone,
+      phone_number: formData.phone,  // Make sure this matches your EmailJS template variable
       nationality: formData.nationality,
       trip_name: tripName,
-      notes: formData.notes,
+      message: `
+New Booking Request
+
+From: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Nationality: ${formData.nationality}
+
+Trip Details:
+Trip Name: ${tripName}
+
+Additional Notes:
+${formData.notes}
+      `,
       reply_to: formData.email
     };
 

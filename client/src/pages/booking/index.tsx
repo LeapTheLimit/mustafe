@@ -63,18 +63,6 @@ export default function Booking() {
           </div>
         ))}
       </div>
-
-      {/* WhatsApp Button */}
-      <a
-        href="https://wa.me/972524858681"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-20 right-4 z-50 bg-green-500 text-white rounded-full px-4 py-2 flex items-center space-x-2 hover:bg-green-600 transition-colors duration-300 shadow-lg"
-        style={{ direction: language === 'ar' ? 'rtl' : 'ltr' }}
-      >
-        <i className="fab fa-whatsapp text-xl"></i>
-        <span>{language === 'ar' ? 'تواصل معنا على واتساب' : 'Contact us on WhatsApp'}</span>
-      </a>
     </div>
   );
 }
